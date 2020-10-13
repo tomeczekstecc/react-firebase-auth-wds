@@ -3,54 +3,53 @@ import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 
-const Login = () => {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const { login } = useAuth();
+const ForgotPassword = () => {
+ const emailRef = useRef();
+
+   const { resetPassword } = useAuth();
   const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
+      setMessage('')
       setError('');
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      history.push('/');
-      setLoading(false);
+      await resetPassword(emailRef.current.value);
+      setMessage('Check your email for further instructions')
+
     } catch (err) {
       console.log(err);
-      setError(`Failed to sign in - ${err}`);
-      setLoading(false);
+      setError(`Failed to reset  - ${err}`);
     }
+    setLoading(false);
   }
 
   return (
     <>
       <Card>
         <Card.Body>
-          <h2 className='text-center mb-4'>Log in</h2>
+          <h2 className='text-center mb-4'>Reset Password</h2>
           {error && <Alert variant='danger'>{error}</Alert>}
+          {message && <Alert variant='success'>{message}</Alert>}
           {/* {JSON.stringify(currentUser?.email)} */}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id='email'>
+            <Form.Group id='password'>
               <Form.Label>Email</Form.Label>
               <Form.Control type='email' required ref={emailRef} />
             </Form.Group>
-            <Form.Group id='email'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control type='password' required ref={passwordRef} />
-            </Form.Group>
             <Button type='submit' className='w-100'>
-              Log in
+              Reset Password
             </Button>
           </Form>
           <div className='mt-1'>
-            <Link to='/forgot-password' className='small'>
+            <Link to='/login' className='small'>
               {' '}
-              Forgot password?
+             login
             </Link>
           </div>
         </Card.Body>
@@ -61,4 +60,4 @@ const Login = () => {
     </>
   );
 };
-export default Login;
+export default ForgotPassword;
