@@ -32,7 +32,7 @@ const Login = () => {
       <Card>
         <Card.Body>
           <h2 className='text-center mb-4'>Log in</h2>
-          {error && <Alert variant='danger'>{error}</Alert>}
+          {!loading && error && <Alert variant='danger'>{error}</Alert>}
           {/* {JSON.stringify(currentUser?.email)} */}
           <Form onSubmit={handleSubmit}>
             <Form.Group id='email'>
@@ -58,6 +58,12 @@ const Login = () => {
       <div className='w-100 text-center mt-2'>
         Don't have an account? <Link to='/signup'>Sign Up</Link>
       </div>
+      <img
+      className='mt-5'
+        alt='netlify-status'
+        width='100'
+        src='https://api.netlify.com/api/v1/badges/47a5d1f5-7397-4122-a1ac-4559a72f2688/deploy-status'
+      />
     </>
   );
 };

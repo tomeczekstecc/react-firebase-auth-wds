@@ -54,7 +54,7 @@ function handleSubmit(e) {
       <Card>
         <Card.Body>
           <h2 className='text-center mb-4'>Update profile</h2>
-          {error && <Alert variant='danger'>{error}</Alert>}
+          {!loading && error && <Alert variant='danger'>{error}</Alert>}
           {/* {JSON.stringify(currentUser?.email)} */}
           <Form onSubmit={handleSubmit}>
             <Form.Group id='email'>
