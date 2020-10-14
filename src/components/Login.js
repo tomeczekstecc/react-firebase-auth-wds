@@ -61,7 +61,7 @@ const Login = () => {
       <img
       className='mt-5'
         alt='netlify-status'
-        width='100'
+        width='150'
         src='https://api.netlify.com/api/v1/badges/47a5d1f5-7397-4122-a1ac-4559a72f2688/deploy-status'
       />
     </>
