@@ -31,7 +31,7 @@ const Login = () => {
     <>
       <Card>
         <Card.Body>
-          <h2 className='text-center mb-4'>Log in</h2>
+          <h2 className='text-center mb-4'>Zaloguj się</h2>
           {!loading && error && <Alert variant='danger'>{error}</Alert>}
           {/* {JSON.stringify(currentUser?.email)} */}
           <Form onSubmit={handleSubmit}>
