@@ -44,7 +44,7 @@ const Login = () => {
               <Form.Control type='password' required ref={passwordRef} />
             </Form.Group>
             <Button type='submit' className='w-100'>
-              Log in
+              Loguj się
             </Button>
           </Form>
           <div className='mt-1'>
@@ -65,13 +65,20 @@ const Login = () => {
         src='https://api.netlify.com/api/v1/badges/47a5d1f5-7397-4122-a1ac-4559a72f2688/deploy-status'
       />
       <div>
-
-      <img
-        className='mt-2'
-        alt='netlify-status'
-        width='150'
-        src='https://github.com/tomeczekstecc/react-firebase-auth-wds/workflows/Node.js%20CI/badge.svg'
-      />
+        <img
+          className='mt-2'
+          alt='netlify-status'
+          width='150'
+          src='https://github.com/tomeczekstecc/react-firebase-auth-wds/workflows/Node.js%20CI/badge.svg'
+        />
+      </div>
+      <div>
+        <img
+          className='mt-2'
+          alt='netlify-status'
+          width='150'
+          src='https://github.com/torvalds/linux/commits/master.atom'
+        />
       </div>
     </>
   );
