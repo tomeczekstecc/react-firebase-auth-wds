@@ -19,13 +19,14 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <PrivateRoute exact path='/' component = {Dashboard}/>
-              <PrivateRoute path='/update-profile' component = {UpdateProfile}/>
-              <Route path='/signup' component = {Signup}/>
-              <Route path='/login' component = {Login}/>
-              <Route path='/forgot-password' component = {ForgotPassword}/>
-
-
+              <PrivateRoute exact path='/' component={Dashboard} />
+              <PrivateRoute
+                path='/#/update-profile'
+                component={UpdateProfile}
+              />
+              <Route path='/#/signup' component={Signup} />
+              <Route path='/#/login' component={Login} />
+              <Route path='/#/forgot-password' component={ForgotPassword} />
             </Switch>
           </AuthProvider>
         </Router>
