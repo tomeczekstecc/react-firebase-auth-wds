@@ -59,11 +59,20 @@ const Login = () => {
         Don't have an account? <Link to='/signup'>Sign Up</Link>
       </div>
       <img
-      className='mt-5'
+        className='mt-5'
         alt='netlify-status'
         width='150'
         src='https://api.netlify.com/api/v1/badges/47a5d1f5-7397-4122-a1ac-4559a72f2688/deploy-status'
       />
+      <div>
+
+      <img
+        className='mt-2'
+        alt='netlify-status'
+        width='150'
+        src='https://github.com/tomeczekstecc/react-firebase-auth-wds/workflows/Node.js%20CI/badge.svg'
+      />
+      </div>
     </>
   );
 };
