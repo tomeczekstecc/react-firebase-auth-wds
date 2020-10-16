@@ -72,14 +72,6 @@ const Login = () => {
           src='https://github.com/tomeczekstecc/react-firebase-auth-wds/workflows/Node.js%20CI/badge.svg'
         />
       </div>
-      <div>
-        <img
-          className='mt-2'
-          alt='netlify-status'
-          width='150'
-          src='https://github.com/torvalds/linux/commits/master.atom'
-        />
-      </div>
     </>
   );
 };
